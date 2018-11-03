@@ -51,8 +51,6 @@ function Game() {
   this.playerLost = function() {
     return this.remainingTries === 0;
   };
-
-  this.newMatch();
 }
 
 module.exports = Game;
