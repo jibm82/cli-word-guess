@@ -1,0 +1,27 @@
+{
+  "name": "cli-word-guess",
+  "version": "1.0.0",
+  "description": "Command Line Word Guess",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jibm82/cli-word-guess.git"
+  },
+  "keywords": [
+    "word-guess",
+    "game"
+  ],
+  "author": "Jorge Baez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jibm82/cli-word-guess/issues"
+  },
+  "homepage": "https://github.com/jibm82/cli-word-guess#readme",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "inquirer": "^6.2.0"
+  }
+}
