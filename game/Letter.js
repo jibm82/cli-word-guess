@@ -1,10 +1,12 @@
+const isLetter = require("./isLetter");
+
 function Letter(value) {
   this.coverCharacter = "_";
   this.value = value;
-  this.isGuessed = false;
+  this.isGuessed = !isLetter(value);
 
   this.toString = function() {
-    if (this.isGuessed || this.value == " ") {
+    if (this.isGuessed) {
       return this.value;
     } else {
       return this.coverCharacter;
