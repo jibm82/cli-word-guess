@@ -5,6 +5,7 @@ function Game() {
   this.wordOptions = wordOptions;
   this.currentWordOptionIndex = this.wordOptions.length;
   this.defaultTries = 10;
+  this.attemptedLetters = undefined;
   this.currentWord = undefined;
   this.remainingTries = undefined;
 
@@ -13,6 +14,7 @@ function Game() {
       this.randomizeWordOptions();
     }
 
+    this.attemptedLetters = [];
     this.currentWord = new Word(
       this.wordOptions[this.currentWordOptionIndex++]
     );
@@ -30,7 +32,13 @@ function Game() {
     return this.currentWord.toString();
   };
 
+  this.isLetterAttempted = function(letter) {
+    return this.attemptedLetters.includes(letter);
+  };
+
   this.guessLetter = function(letter) {
+    this.attemptedLetters.push(letter);
+
     let result = this.currentWord.guessLetter(letter);
 
     if (!result) {

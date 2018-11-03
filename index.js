@@ -18,7 +18,11 @@ function askForLetter() {
       message: "Guess a letter!",
       validate: value => {
         if (isLetter(value)) {
-          return true;
+          if (game.isLetterAttempted(value)) {
+            return "You already tried that letter.";
+          } else {
+            return true;
+          }
         } else {
           return "Invalid input! Must be a single letter.";
         }
