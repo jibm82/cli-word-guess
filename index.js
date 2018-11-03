@@ -45,10 +45,18 @@ function evaluateLetter(guessedLetter) {
 
 function checkGameStatus() {
   if (game.isMatchOver()) {
-    console.log("Game Over");
+    displayMatchResult();
     menu();
   } else {
     askForLetter();
+  }
+}
+
+function displayMatchResult() {
+  if (game.playerWon()) {
+    console.log(chalk.green("You Win!\n"));
+  } else {
+    console.log(chalk.red("You Lose!\n"));
   }
 }
 
@@ -71,7 +79,7 @@ function menu() {
     })
     .then(answers => {
       if (answers.option === "play-again") {
-        askForLetter();
+        newMatch();
       } else {
         console.log("Good bye");
       }
